@@ -1,0 +1,10 @@
+{
+    "java.home": "/usr/lib/jvm/jdk-20",
+    "metals.enable": true,
+
+    "python.linting.pylintArgs": [
+        "--disable=missing-class-docstring",
+        "--disable=missing-function-docstring",
+        "--disable=missing-module-docstring",
+    ]
+}
