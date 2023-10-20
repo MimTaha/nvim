@@ -7,6 +7,6 @@
         "--disable=missing-function-docstring",
         "--disable=missing-module-docstring",
 
-        "--extension-pkg-whitelist=cv2"
+        "--generate-members=cv2.*",
     ]
 }
