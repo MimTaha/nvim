@@ -53,6 +53,8 @@ return require('packer').startup(function(use)
 
 	--for auto genrate
     use 'neoclide/coc.nvim'
+    --for python auto generate
+    use 'pappasam/coc-jedi'
 
     use 'ThePrimeagen/vim-be-good'
 
