@@ -6,5 +6,7 @@
         "--disable=missing-class-docstring",
         "--disable=missing-function-docstring",
         "--disable=missing-module-docstring",
+
+        "--extension-pkg-whitelist=cv2"
     ]
 }
