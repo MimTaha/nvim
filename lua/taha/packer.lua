@@ -77,6 +77,9 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
 
+    --for show list error message
+    use 'folke/trouble.nvim'
+
     --To relax coding
     use 'folke/zen-mode.nvim'
     use 'folke/twilight.nvim'
