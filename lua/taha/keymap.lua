@@ -10,6 +10,10 @@ map("n", "<C-q>", "<C-w>q", opts)
 map("v", "J", ":m '>+1<CR>gv=gv", opts)
 map("v", "K", ":m '<-2<CR>gv=gv", opts)
 
+map("n", "<leader>y", "\"+y", opts)
+map("v", "<leader>y", "\"+y", opts)
+map("n", "<leader>Y", "\"+Y", opts)
+
 map("n", "<leader>wt", '<cmd>ToggleTerm<CR>', opts)
 
 map("n", "<leader>ws", '<cmd>split<CR>', opts)
