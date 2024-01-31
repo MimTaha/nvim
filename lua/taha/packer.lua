@@ -77,6 +77,9 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
 
+    --to debug
+    use 'mfussenegger/nvim-dap'
+
     --to move tab
     use 'nvim-lua/plenary.nvim'
     use 'ThePrimeagen/harpoon'
