@@ -77,6 +77,10 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
 
+    --To relax coding
+    use 'folke/zen-mode.nvim'
+    use 'folke/twilight.nvim'
+
     --to debug
     use 'mfussenegger/nvim-dap'
 
