@@ -4,11 +4,6 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	--for tab line
-	use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
-	use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
-	use 'romgrk/barbar.nvim'
-
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
