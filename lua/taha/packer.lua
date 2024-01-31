@@ -9,10 +9,6 @@ return require('packer').startup(function(use)
 	use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
 	use 'romgrk/barbar.nvim'
 
-	--for auto genrate
-    use 'neoclide/coc.nvim'
-    --for python auto generate
-    use 'pappasam/coc-jedi'
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
@@ -59,6 +55,8 @@ return require('packer').startup(function(use)
     --for comment
     use 'https://github.com/tpope/vim-commentary'
 
+    --for auto genrate
+    -- use 'neoclide/coc.nvim'
 
     use 'ThePrimeagen/vim-be-good'
 
