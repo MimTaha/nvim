@@ -67,6 +67,10 @@ return require('packer').startup(function(use)
     -- github
     use 'tpope/vim-fugitive'
     use 'junegunn/gv.vim'
+
+    --Blankline
+    use 'lukas-reineke/indent-blankline.nvim'
+
     --lsp
     use "neovim/nvim-lspconfig"
 
