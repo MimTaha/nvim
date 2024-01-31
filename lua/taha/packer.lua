@@ -71,6 +71,12 @@ return require('packer').startup(function(use)
     --Blankline
     use 'lukas-reineke/indent-blankline.nvim'
 
+    --autopairs
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+
     --lsp
     use "neovim/nvim-lspconfig"
 
