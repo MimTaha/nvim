@@ -4,12 +4,6 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.2',
-		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
-
 	--for tab line
 	use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
 	use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
@@ -21,6 +15,14 @@ return require('packer').startup(function(use)
     use 'pappasam/coc-jedi'
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.5',
+        -- or                            , branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+    use { 'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
     use 'preservim/nerdtree'
 
