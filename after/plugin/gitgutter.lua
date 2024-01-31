@@ -1,0 +1,1 @@
+-- vim.api.nvim_set_keymap('n', 'ghp', '<Plug>(GitGutterPreviewHunk)', { noremap = true, silent = true })
