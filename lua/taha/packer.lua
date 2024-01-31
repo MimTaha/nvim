@@ -47,6 +47,8 @@ return require('packer').startup(function(use)
     --for tag bar
     use 'https://github.com/preservim/tagbar'
 
+    use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
+
     --for comment
     use 'https://github.com/tpope/vim-commentary'
 
