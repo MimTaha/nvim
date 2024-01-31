@@ -26,3 +26,8 @@ map('t', '<A-q>', '<Cmd>BufferClose!<CR>', opts)
 map('n', '<leader>u', '<cmd>UndotreeToggle<CR>', opts)
 
 map('n', '<leader>gs', '<cmd>Git<CR>', opts)
+
+map('n', '<leader>lk', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+map('n', '<leader>lf', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
+map('n', '<leader>lsh', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+map('n', '<leader>lR', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
