@@ -102,4 +102,9 @@ return require('packer').startup(function(use)
     --to move tab
     use 'nvim-lua/plenary.nvim'
     use 'ThePrimeagen/harpoon'
+
+    --to notif
+    use 'folke/noice.nvim'
+    use 'rcarriga/nvim-notify'
+    use 'MunifTanjim/nui.nvim'
 end)
