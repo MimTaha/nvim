@@ -34,6 +34,8 @@ return require('packer').startup(function(use)
             }
         end
     }
+    use "echasnovski/mini.icons"
+    use 'nvim-tree/nvim-web-devicons'
 
     use "folke/tokyonight.nvim"
     use 'sainnhe/sonokai'
