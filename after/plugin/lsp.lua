@@ -1,5 +1,4 @@
 local lsp = require('lspconfig')
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local cmp = require'cmp'
 
 cmp.setup({
@@ -62,11 +61,15 @@ cmp.setup.cmdline(':', {
     })
 })
 
-cmp.setup({
-    sources = {
-        { name = 'nvim_lsp' },
-    },
-})
+-- cmp.setup({
+--     sources = {
+--         { name = 'nvim_lsp' },
+--     },
+-- })
+
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 
 lsp.clangd.setup{
     capabilities = capabilities,
@@ -100,6 +103,7 @@ lsp.clangd.setup{
 }
 
 require'lspconfig'.cmake.setup{
+    capabilities = capabilities,
     cmd = { "cmake-language-server" },
     filetypes = { "cmake" , "CMakeLists.txt"},
     init_options = {
@@ -108,4 +112,34 @@ require'lspconfig'.cmake.setup{
     single_file_support = true,
 }
 
-lsp.pyright.setup{}
+lsp.pyright.setup{
+    capabilities = capabilities,
+    root_dir = function() return vim.loop.cwd() end,
+    on_attach = function(client, bufnr)
+        vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+        vim.lsp.diagnostic.on_publish_diagnostics, {
+            underline = true,
+            virtual_text = true,
+            signs = true,
+            update_in_insert = true,
+        })
+        if client.server_capabilities.documentHighlightProvider then
+            vim.cmd [[
+            hi! LspReferenceRead cterm=bold ctermbg=235
+            hi! LspReferenceText cterm=bold ctermbg=235
+            hi! LspReferenceWrite cterm=bold ctermbg=235
+            ]]
+            vim.api.nvim_create_augroup('lsp_document_highlight', {})
+            vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+                group = 'lsp_document_highlight',
+                buffer = 0,
+                callback = vim.lsp.buf.document_highlight,
+            })
+            vim.api.nvim_create_autocmd('CursorMoved', {
+                group = 'lsp_document_highlight',
+                buffer = 0,
+                callback = vim.lsp.buf.clear_references,
+            })
+        end
+    end
+}
